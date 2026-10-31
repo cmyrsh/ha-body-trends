@@ -1,0 +1,28 @@
+name: Body Trends
+version: "0.1.0"
+slug: body_trends
+description: Local trend and analysis of body measurements from BLE Scale Sync
+arch: [amd64, aarch64]
+init: false
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:scale-bathroom
+panel_title: Body Trends
+services:
+  - mqtt:want
+map:
+  - share:rw
+options:
+  base_topic: scale/body-composition
+  smoothing_alpha: 0.1
+  hampel_window: 7
+  hampel_sigmas: 3.5
+schema:
+  base_topic: str
+  smoothing_alpha: float(0.01,1)
+  hampel_window: int(3,31)
+  hampel_sigmas: float(1,10)
+  mqtt_host: str?
+  mqtt_port: port?
+  mqtt_username: str?
+  mqtt_password: password?

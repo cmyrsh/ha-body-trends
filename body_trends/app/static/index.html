@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Body Trends</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+  <h1>Body Trends</h1>
+  <select id="user"></select>
+  <nav id="ranges"></nav>
+  <span class="nav"><button id="prev">‹</button><span id="label"></span><button id="next">›</button></span>
+  <span class="spacer"></span>
+  <label class="anon"><input type="checkbox" id="anon" checked> anonymize</label>
+  <select id="fmt"><option value="md">Markdown (for Claude)</option><option value="json">JSON</option><option value="csv">CSV</option></select>
+  <button id="export">Export</button>
+</header>
+<main id="cards"><p class="muted">Loading…</p></main>
+<script src="app.js"></script>
+</body></html>

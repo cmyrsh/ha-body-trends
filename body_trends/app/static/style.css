@@ -1,0 +1,18 @@
+:root{--bg:var(--primary-background-color,#fafafa);--card:var(--card-background-color,#fff);--fg:var(--primary-text-color,#212121);
+--muted:var(--secondary-text-color,#727272);--accent:var(--primary-color,#03a9f4);--line:var(--divider-color,#e0e0e0);--warn:#db4437;--ok:#43a047}
+@media(prefers-color-scheme:dark){:root{--bg:var(--primary-background-color,#111);--card:var(--card-background-color,#1c1c1c);--fg:var(--primary-text-color,#e1e1e1);--muted:var(--secondary-text-color,#9b9b9b);--line:var(--divider-color,#333)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 Roboto,system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
+h1{font-size:18px;margin:0 8px 0 0;font-weight:500}.spacer{flex:1}
+select,button{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font:inherit;cursor:pointer}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}nav{display:flex;gap:4px}
+.nav{display:flex;align-items:center;gap:6px}#label{min-width:150px;text-align:center}
+main{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;padding:16px;max-width:1400px;margin:auto}
+.card{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line)}.card.wide{grid-column:1/-1}
+.card h2{font-size:14px;margin:0 0 8px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.big{font-size:32px;font-weight:500}.muted{color:var(--muted)}.pos{color:var(--warn)}.neg{color:var(--ok)}
+.tiles{display:flex;gap:16px;flex-wrap:wrap}.tile{flex:1;min-width:90px}
+svg{width:100%;height:auto;display:block}svg text{fill:var(--muted);font-size:10px}
+table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;text-align:right;border-bottom:1px solid var(--line)}td:first-child,th:first-child{text-align:left}
+.profile{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:center}.profile input,.profile select{width:100%}
+input{background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font:inherit}
