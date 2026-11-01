@@ -13,11 +13,13 @@ services:
 map:
   - share:rw
 options:
+  debug: false
   base_topic: scale/body-composition
   smoothing_alpha: 0.1
   hampel_window: 7
   hampel_sigmas: 3.5
 schema:
+  debug: bool
   base_topic: str
   smoothing_alpha: float(0.01,1)
   hampel_window: int(3,31)

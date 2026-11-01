@@ -15,6 +15,7 @@ Local trend analysis of body measurements published by [BLE Scale Sync](https://
 ## Options
 | Option | Default | Meaning |
 |---|---|---|
+| `debug` | `false` | Verbose add-on log. Currently logs every MQTT message (topic and payload) and whether it was stored. |
 | `base_topic` | `scale/body-composition` | Must match BLE Scale Sync's MQTT `topic`. |
 | `smoothing_alpha` | `0.1` | Daily smoothing factor of the trend line (Hacker's Diet). Lower is smoother. |
 | `hampel_window` | `7` | Number of readings used to judge whether a reading is an outlier. |

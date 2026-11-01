@@ -2,6 +2,7 @@
 import csv
 import io
 import json
+import logging
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -30,6 +31,8 @@ def get_store() -> Store:
 async def lifespan(app: FastAPI):
     global opts
     opts = mqtt_ingest.load_options()
+    logging.basicConfig(format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    logging.getLogger("body_trends").setLevel(logging.DEBUG if opts.get("debug") else logging.INFO)
     client = mqtt_ingest.start(
         get_store(), opts,
         on_new=lambda c, user: mqtt_publish.publish_user(c, get_store(), user, opts),
